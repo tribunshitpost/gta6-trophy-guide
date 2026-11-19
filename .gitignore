@@ -1,2 +1,5 @@
+# Build outputs from main.ts — regenerated, never committed.
 out/
 out2/
+# Local dependencies, if any are ever installed for testing.
+node_modules/

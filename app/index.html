@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Trophy Guide — GTA VI (PS5)</title>
+<link rel="icon" href="data:,">
+<meta name="description" content="An offline guide and tracker for all 55 PlayStation 5 trophies of Grand Theft Auto VI: official list, cited guides, roadmap to the Platinum, and the one missable trophy.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; unofficial fan guide</p>
+    <h1>Leonida Trophy Guide</h1>
+    <p class="lede">Every one of the 55 trophies — official names, descriptions and grades — with a guide to each in our own words, its sources, a roadmap to the Platinum, and a checklist that saves in your browser. Works fully offline.</p>
+  </div>
+  <div class="progress-card" id="progressCard" aria-label="Overall progress">
+    <div class="big-number"><span id="earnedCount">0</span><span class="of">/ 55</span></div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBarWrap"><div class="bar-fill" id="progressFill" style="width:0%"></div></div>
+    <p id="progressText">0% — the Platinum is 54 trophies away.</p>
+    <ul class="grade-counts" id="gradeCounts"></ul>
+  </div>
+</header>
+
+<section class="callout missable-callout" id="missableCallout">
+  <strong>&#9888; One trophy can be missed.</strong>
+  <span><b>Positive Mental Attitude</b> — Lucia&rsquo;s balcony meditation in Chapter 1 disappears once that chapter ends, and GTA VI has no mission replay. Do it in Chapter 1 and keep a manual save at the start of every chapter. Everything else can be earned after the story.</span>
+  <button type="button" id="showMissable" class="link-button">Show the missable trophy</button>
+</section>
+
+<section class="toolbar" aria-label="Filters and progress tools">
+  <div class="toolbar-row">
+    <label class="search-label">Search <input type="search" id="search" placeholder="Trophy name or description…" autocomplete="off"></label>
+    <label>Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label>Status
+      <select id="statusFilter">
+        <option value="all">Earned + unearned</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Not earned yet</option>
+      </select>
+    </label>
+    <label class="check-label"><input type="checkbox" id="missableOnly"> Missable only</label>
+    <label class="check-label spoiler-label"><input type="checkbox" id="spoilerToggle" checked> Hide story spoilers</label>
+  </div>
+  <div class="toolbar-row kinds" id="kindChips" role="group" aria-label="Filter by kind"></div>
+  <div class="toolbar-row tools">
+    <span id="resultCount" aria-live="polite"></span>
+    <span class="spacer"></span>
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="import-label">Import progress <input type="file" id="importInput" accept="application/json,.json"></label>
+    <button type="button" id="resetBtn">Reset progress</button>
+  </div>
+</section>
+
+<main class="layout">
+  <section class="list-col" aria-label="Trophy checklist">
+    <h2 id="listHeading">Checklist</h2>
+    <ul class="trophy-list" id="trophyList"></ul>
+    <p class="empty-note" id="emptyNote" hidden>No trophies match these filters. Clear the search or pick another kind.</p>
+  </section>
+  <aside class="detail-col" aria-label="Trophy guide detail" id="detailPanel">
+    <h2>Guide</h2>
+    <div id="detailBody"><p class="detail-empty">Pick a trophy from the checklist to see its full guide: what to do, where and how, when it can be missed, and the sources behind each fact.</p></div>
+  </aside>
+</main>
+
+<section class="roadmap" id="roadmap">
+  <h2>Roadmap to the Platinum</h2>
+  <p class="roadmap-intro">About <b>200 hours</b>, difficulty <b>4/10</b>, one playthrough, no online trophies and no difficulty trophies. The story takes 60–80 hours; the 100% checklist after the credits is the long pole, at about 100 hours. Cheats disable trophies and saving, so keep them off on a trophy run. <span class="cite">Roadmap and times: PowerPyx.</span></p>
+  <ol class="phases" id="phases"></ol>
+</section>
+
+<footer>
+  <h2>Sources &amp; notes</h2>
+  <p>Official trophy names, descriptions and grades are as published on PlayStation Network, listed by Exophase and PSNProfiles on 18 November 2026 and cross-checked across the guides below. The guides on this page are written in our own words; they draw on the sources listed beside each trophy and never copy their text.</p>
+  <ul id="sourceList"></ul>
+  <p class="fineprint">Unofficial fan guide. Not affiliated with Rockstar Games, Take-Two Interactive or Sony Interactive Entertainment. No Rockstar logo, artwork or game screenshots are used. Progress is stored only in your browser (localStorage); export and import move it as a file, and nothing is sent anywhere. Five trophies whose exact unlock method was not yet confirmed by guides at launch (In The Beginning…, Capital Offense, Bad Luck, I Guess, The Truth Is Out There, Ten Pin) are marked as unconfirmed in their guides.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
